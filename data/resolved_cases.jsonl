@@ -1,0 +1,12 @@
+{"id":"c01","intent":"billing","problem":"Customer was charged twice for the same invoice.","resolution":"Verify both invoice ids, refund the duplicate charge; it appears on the statement in 3-5 business days."}
+{"id":"c02","intent":"billing","problem":"Invoice shows a wrong or missing VAT ID.","resolution":"Update the VAT ID in billing settings and reissue the invoice; the corrected PDF is emailed within one day."}
+{"id":"c03","intent":"account_access","problem":"Forgot password, reset email does not arrive.","resolution":"Resend the reset link, check the spam folder; the link is valid for 30 minutes."}
+{"id":"c04","intent":"account_access","problem":"Two-factor authentication code does not arrive on a new phone.","resolution":"Use a backup code to sign in, then re-register the authenticator app or the new phone number in security settings."}
+{"id":"c05","intent":"technical_issue","problem":"App crashes on startup after an update.","resolution":"Clear the app cache and reinstall version 4.2.1 or newer; the crash was fixed in 4.2.1."}
+{"id":"c06","intent":"technical_issue","problem":"CSV export produces an empty file.","resolution":"Select a date range before exporting; an empty range exports nothing. A bug with the default range is fixed in 4.3."}
+{"id":"c07","intent":"shipping","problem":"Package delayed, tracking has not moved for several days.","resolution":"After 5 days without a tracking update open a carrier investigation; if not found, reship at no cost."}
+{"id":"c08","intent":"shipping","problem":"Wrong item delivered.","resolution":"Send a prepaid return label and ship the correct item once the return is scanned."}
+{"id":"c09","intent":"cancellation","problem":"Customer wants to cancel the subscription.","resolution":"Settings > Plan > Cancel. Access continues until the end of the paid period; there is no partial refund."}
+{"id":"c10","intent":"feature_request","problem":"Customer asks for a dark mode.","resolution":"Logged on the product roadmap as a request; no delivery date can be promised."}
+{"id":"c11","intent":"technical_issue","problem":"API returns HTTP 429 too many requests.","resolution":"The limit is 60 requests per minute per key; use exponential backoff and honour the Retry-After header."}
+{"id":"c12","intent":"account_access","problem":"Account locked after several failed login attempts.","resolution":"The lock lifts automatically after 30 minutes; otherwise verify identity with support."}

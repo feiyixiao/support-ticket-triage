@@ -1,0 +1,560 @@
+{
+ "summary": {
+  "n": 24,
+  "classified": 24,
+  "intent_acc": 0.875,
+  "urgency_acc": 0.625,
+  "escalation": {
+   "tp": 10,
+   "fp": 4,
+   "fn": 0,
+   "tn": 10,
+   "precision": 0.7142857142857143,
+   "recall": 1.0,
+   "escalation_rate": 0.5833333333333334
+  },
+  "confidence": {
+   "ece_3bins": 0.33916666666666667,
+   "auroc_conf_vs_correct": 0.5874125874125874,
+   "mean_conf": 0.8808333333333334,
+   "acc_both": 0.5416666666666666
+  },
+  "missed_escalations": [],
+  "false_escalations": [
+   "t07",
+   "t10",
+   "t17",
+   "t19"
+  ]
+ },
+ "rows": [
+  {
+   "id": "t00",
+   "text": "I was charged twice for my March invoice, please refund one.",
+   "gold": {
+    "id": "t00",
+    "text": "I was charged twice for my March invoice, please refund one.",
+    "intent": "billing",
+    "urgency": "normal",
+    "should_escalate": false
+   },
+   "pred": {
+    "intent": "billing",
+    "urgency": "high",
+    "confidence": 0.92,
+    "reason": "Duplicate charge on invoice"
+   },
+   "escalate": false,
+   "reasons": [],
+   "degraded": []
+  },
+  {
+   "id": "t01",
+   "text": "My invoice shows the wrong VAT ID, I need a corrected one for my accountant.",
+   "gold": {
+    "id": "t01",
+    "text": "My invoice shows the wrong VAT ID, I need a corrected one for my accountant.",
+    "intent": "billing",
+    "urgency": "normal",
+    "should_escalate": false
+   },
+   "pred": {
+    "intent": "billing",
+    "urgency": "normal",
+    "confidence": 0.92,
+    "reason": "Customer requests corrected VAT ID on invoice."
+   },
+   "escalate": false,
+   "reasons": [],
+   "degraded": []
+  },
+  {
+   "id": "t02",
+   "text": "I can't log in, I forgot my password and the reset link doesn't come.",
+   "gold": {
+    "id": "t02",
+    "text": "I can't log in, I forgot my password and the reset link doesn't come.",
+    "intent": "account_access",
+    "urgency": "normal",
+    "should_escalate": false
+   },
+   "pred": {
+    "intent": "account_access",
+    "urgency": "normal",
+    "confidence": 0.92,
+    "reason": "User cannot log in and reset link not arriving."
+   },
+   "escalate": false,
+   "reasons": [],
+   "degraded": []
+  },
+  {
+   "id": "t03",
+   "text": "The two-factor code SMS never arrives on my new phone.",
+   "gold": {
+    "id": "t03",
+    "text": "The two-factor code SMS never arrives on my new phone.",
+    "intent": "account_access",
+    "urgency": "normal",
+    "should_escalate": false
+   },
+   "pred": {
+    "intent": "account_access",
+    "urgency": "high",
+    "confidence": 0.9,
+    "reason": "User cannot receive 2FA SMS, blocking account access."
+   },
+   "escalate": false,
+   "reasons": [],
+   "degraded": []
+  },
+  {
+   "id": "t04",
+   "text": "Since the update the app crashes immediately when I open it.",
+   "gold": {
+    "id": "t04",
+    "text": "Since the update the app crashes immediately when I open it.",
+    "intent": "technical_issue",
+    "urgency": "high",
+    "should_escalate": false
+   },
+   "pred": {
+    "intent": "technical_issue",
+    "urgency": "normal",
+    "confidence": 0.92,
+    "reason": "App crashes on launch after update."
+   },
+   "escalate": false,
+   "reasons": [],
+   "degraded": []
+  },
+  {
+   "id": "t05",
+   "text": "My CSV export gives me an empty file.",
+   "gold": {
+    "id": "t05",
+    "text": "My CSV export gives me an empty file.",
+    "intent": "technical_issue",
+    "urgency": "normal",
+    "should_escalate": false
+   },
+   "pred": {
+    "intent": "technical_issue",
+    "urgency": "normal",
+    "confidence": 0.92,
+    "reason": "CSV export is failing, likely a technical bug."
+   },
+   "escalate": false,
+   "reasons": [],
+   "degraded": []
+  },
+  {
+   "id": "t06",
+   "text": "My parcel was due last week and tracking has not moved for 6 days.",
+   "gold": {
+    "id": "t06",
+    "text": "My parcel was due last week and tracking has not moved for 6 days.",
+    "intent": "shipping",
+    "urgency": "normal",
+    "should_escalate": false
+   },
+   "pred": {
+    "intent": "shipping",
+    "urgency": "normal",
+    "confidence": 0.92,
+    "reason": "Delayed shipment with no tracking update."
+   },
+   "escalate": false,
+   "reasons": [],
+   "degraded": []
+  },
+  {
+   "id": "t07",
+   "text": "You sent me a blue keyboard but I ordered the black one.",
+   "gold": {
+    "id": "t07",
+    "text": "You sent me a blue keyboard but I ordered the black one.",
+    "intent": "shipping",
+    "urgency": "low",
+    "should_escalate": false
+   },
+   "pred": {
+    "intent": "shipping",
+    "urgency": "normal",
+    "confidence": 0.92,
+    "reason": "Customer received wrong color keyboard"
+   },
+   "escalate": true,
+   "reasons": [
+    "no_citation",
+    "needs_more_info"
+   ],
+   "degraded": []
+  },
+  {
+   "id": "t08",
+   "text": "How do I cancel my subscription? I don't want to be charged next month.",
+   "gold": {
+    "id": "t08",
+    "text": "How do I cancel my subscription? I don't want to be charged next month.",
+    "intent": "cancellation",
+    "urgency": "normal",
+    "should_escalate": false
+   },
+   "pred": {
+    "intent": "cancellation",
+    "urgency": "normal",
+    "confidence": 0.95,
+    "reason": "User wants to cancel subscription to avoid next charge."
+   },
+   "escalate": false,
+   "reasons": [],
+   "degraded": []
+  },
+  {
+   "id": "t09",
+   "text": "Please add a dark mode, my eyes hurt at night.",
+   "gold": {
+    "id": "t09",
+    "text": "Please add a dark mode, my eyes hurt at night.",
+    "intent": "feature_request",
+    "urgency": "low",
+    "should_escalate": false
+   },
+   "pred": {
+    "intent": "feature_request",
+    "urgency": "low",
+    "confidence": 0.92,
+    "reason": "User requests a new feature (dark mode)."
+   },
+   "escalate": false,
+   "reasons": [],
+   "degraded": []
+  },
+  {
+   "id": "t10",
+   "text": "Your API returns 429 errors every few seconds in our integration.",
+   "gold": {
+    "id": "t10",
+    "text": "Your API returns 429 errors every few seconds in our integration.",
+    "intent": "technical_issue",
+    "urgency": "high",
+    "should_escalate": false
+   },
+   "pred": {
+    "intent": "technical_issue",
+    "urgency": "high",
+    "confidence": 0.85,
+    "reason": "API rate limiting is blocking integration."
+   },
+   "escalate": true,
+   "reasons": [
+    "no_citation"
+   ],
+   "degraded": []
+  },
+  {
+   "id": "t11",
+   "text": "My account got locked after I typed the wrong password a few times.",
+   "gold": {
+    "id": "t11",
+    "text": "My account got locked after I typed the wrong password a few times.",
+    "intent": "account_access",
+    "urgency": "normal",
+    "should_escalate": false
+   },
+   "pred": {
+    "intent": "account_access",
+    "urgency": "high",
+    "confidence": 0.95,
+    "reason": "The user explicitly states their account is locked due to failed password attempts, which is a direct access issue."
+   },
+   "escalate": false,
+   "reasons": [],
+   "degraded": []
+  },
+  {
+   "id": "t12",
+   "text": "Our production checkout is down since 10 minutes and we are losing orders!",
+   "gold": {
+    "id": "t12",
+    "text": "Our production checkout is down since 10 minutes and we are losing orders!",
+    "intent": "technical_issue",
+    "urgency": "critical",
+    "should_escalate": true
+   },
+   "pred": {
+    "intent": "technical_issue",
+    "urgency": "critical",
+    "confidence": 0.95,
+    "reason": "Production checkout outage causing order loss"
+   },
+   "escalate": true,
+   "reasons": [
+    "critical_urgency",
+    "no_citation",
+    "needs_more_info"
+   ],
+   "degraded": []
+  },
+  {
+   "id": "t13",
+   "text": "I think someone hacked my account, there are purchases I did not make.",
+   "gold": {
+    "id": "t13",
+    "text": "I think someone hacked my account, there are purchases I did not make.",
+    "intent": "account_access",
+    "urgency": "critical",
+    "should_escalate": true
+   },
+   "pred": {
+    "intent": "account_access",
+    "urgency": "critical",
+    "confidence": 0.9,
+    "reason": "User reports unauthorized purchases indicating a possible account takeover."
+   },
+   "escalate": true,
+   "reasons": [
+    "critical_urgency",
+    "no_citation",
+    "needs_more_info"
+   ],
+   "degraded": []
+  },
+  {
+   "id": "t14",
+   "text": "Please delete all my personal data under GDPR article 17.",
+   "gold": {
+    "id": "t14",
+    "text": "Please delete all my personal data under GDPR article 17.",
+    "intent": "other",
+    "urgency": "high",
+    "should_escalate": true
+   },
+   "pred": {
+    "intent": "other",
+    "urgency": "normal",
+    "confidence": 0.92,
+    "reason": "User requests GDPR data deletion."
+   },
+   "escalate": true,
+   "reasons": [
+    "no_similar_case",
+    "no_citation",
+    "needs_more_info"
+   ],
+   "degraded": []
+  },
+  {
+   "id": "t15",
+   "text": "I will sue you if this is not fixed today.",
+   "gold": {
+    "id": "t15",
+    "text": "I will sue you if this is not fixed today.",
+    "intent": "other",
+    "urgency": "high",
+    "should_escalate": true
+   },
+   "pred": {
+    "intent": "technical_issue",
+    "urgency": "critical",
+    "confidence": 0.7,
+    "reason": "User threatens legal action if issue not resolved today, indicating a critical situation."
+   },
+   "escalate": true,
+   "reasons": [
+    "critical_urgency",
+    "no_citation",
+    "needs_more_info"
+   ],
+   "degraded": []
+  },
+  {
+   "id": "t16",
+   "text": "It doesn't work.",
+   "gold": {
+    "id": "t16",
+    "text": "It doesn't work.",
+    "intent": "other",
+    "urgency": "normal",
+    "should_escalate": true
+   },
+   "pred": {
+    "intent": "technical_issue",
+    "urgency": "normal",
+    "confidence": 0.3,
+    "reason": "The ticket provides no specific details about the product, error message, or context, making it impossible to accurately determine the specific intent or urgency."
+   },
+   "escalate": true,
+   "reasons": [
+    "low_classifier_confidence",
+    "no_similar_case",
+    "no_citation",
+    "needs_more_info"
+   ],
+   "degraded": []
+  },
+  {
+   "id": "t17",
+   "text": "Where is my refund? I cancelled two weeks ago and was still charged.",
+   "gold": {
+    "id": "t17",
+    "text": "Where is my refund? I cancelled two weeks ago and was still charged.",
+    "intent": "billing",
+    "urgency": "high",
+    "should_escalate": false
+   },
+   "pred": {
+    "intent": "billing",
+    "urgency": "high",
+    "confidence": 0.92,
+    "reason": "Customer was charged after cancellation and is seeking refund."
+   },
+   "escalate": true,
+   "reasons": [
+    "no_citation",
+    "needs_more_info"
+   ],
+   "degraded": []
+  },
+  {
+   "id": "t18",
+   "text": "Do you ship to Norway and how long does it take?",
+   "gold": {
+    "id": "t18",
+    "text": "Do you ship to Norway and how long does it take?",
+    "intent": "shipping",
+    "urgency": "low",
+    "should_escalate": true
+   },
+   "pred": {
+    "intent": "shipping",
+    "urgency": "low",
+    "confidence": 0.95,
+    "reason": "Customer is asking about shipping availability and delivery time."
+   },
+   "escalate": true,
+   "reasons": [
+    "no_citation",
+    "needs_more_info"
+   ],
+   "degraded": []
+  },
+  {
+   "id": "t19",
+   "text": "The export button is greyed out on my tablet.",
+   "gold": {
+    "id": "t19",
+    "text": "The export button is greyed out on my tablet.",
+    "intent": "technical_issue",
+    "urgency": "normal",
+    "should_escalate": false
+   },
+   "pred": {
+    "intent": "technical_issue",
+    "urgency": "low",
+    "confidence": 0.85,
+    "reason": "Export button disabled on tablet indicates a UI/feature issue."
+   },
+   "escalate": true,
+   "reasons": [
+    "no_citation",
+    "needs_more_info"
+   ],
+   "degraded": []
+  },
+  {
+   "id": "t20",
+   "text": "Can I get a discount for a non-profit organisation?",
+   "gold": {
+    "id": "t20",
+    "text": "Can I get a discount for a non-profit organisation?",
+    "intent": "other",
+    "urgency": "low",
+    "should_escalate": true
+   },
+   "pred": {
+    "intent": "billing",
+    "urgency": "low",
+    "confidence": 0.95,
+    "reason": "The user is inquiring about pricing adjustments or discounts, which falls under billing and payment inquiries."
+   },
+   "escalate": true,
+   "reasons": [
+    "no_similar_case",
+    "no_citation",
+    "needs_more_info"
+   ],
+   "degraded": []
+  },
+  {
+   "id": "t21",
+   "text": "I got a charge from you but I never signed up.",
+   "gold": {
+    "id": "t21",
+    "text": "I got a charge from you but I never signed up.",
+    "intent": "billing",
+    "urgency": "high",
+    "should_escalate": true
+   },
+   "pred": {
+    "intent": "billing",
+    "urgency": "high",
+    "confidence": 0.85,
+    "reason": "Unauthorized charge reported"
+   },
+   "escalate": true,
+   "reasons": [
+    "no_citation",
+    "needs_more_info"
+   ],
+   "degraded": []
+  },
+  {
+   "id": "t22",
+   "text": "The app crashes when I upload a photo larger than 10 MB.",
+   "gold": {
+    "id": "t22",
+    "text": "The app crashes when I upload a photo larger than 10 MB.",
+    "intent": "technical_issue",
+    "urgency": "normal",
+    "should_escalate": true
+   },
+   "pred": {
+    "intent": "technical_issue",
+    "urgency": "normal",
+    "confidence": 0.92,
+    "reason": "App crashes on large photo upload"
+   },
+   "escalate": true,
+   "reasons": [
+    "no_citation",
+    "needs_more_info"
+   ],
+   "degraded": []
+  },
+  {
+   "id": "t23",
+   "text": "I can't reset my password because I no longer have access to that email address.",
+   "gold": {
+    "id": "t23",
+    "text": "I can't reset my password because I no longer have access to that email address.",
+    "intent": "account_access",
+    "urgency": "high",
+    "should_escalate": true
+   },
+   "pred": {
+    "intent": "account_access",
+    "urgency": "normal",
+    "confidence": 0.92,
+    "reason": "User cannot reset password due to lost email access."
+   },
+   "escalate": true,
+   "reasons": [
+    "no_citation",
+    "needs_more_info"
+   ],
+   "degraded": []
+  }
+ ]
+}

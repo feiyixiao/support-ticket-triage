@@ -1,0 +1,7 @@
+langgraph>=1.0
+groq>=0.30
+pydantic>=2.7
+python-dotenv>=1.0
+pytest>=8
+pytest-asyncio>=0.23
+# optional, for speaker labels on audio: pyannote.audio (needs an HF token)

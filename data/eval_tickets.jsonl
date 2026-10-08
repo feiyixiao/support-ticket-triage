@@ -1,0 +1,24 @@
+{"id": "t00", "text": "I was charged twice for my March invoice, please refund one.", "intent": "billing", "urgency": "normal", "should_escalate": false}
+{"id": "t01", "text": "My invoice shows the wrong VAT ID, I need a corrected one for my accountant.", "intent": "billing", "urgency": "normal", "should_escalate": false}
+{"id": "t02", "text": "I can't log in, I forgot my password and the reset link doesn't come.", "intent": "account_access", "urgency": "normal", "should_escalate": false}
+{"id": "t03", "text": "The two-factor code SMS never arrives on my new phone.", "intent": "account_access", "urgency": "normal", "should_escalate": false}
+{"id": "t04", "text": "Since the update the app crashes immediately when I open it.", "intent": "technical_issue", "urgency": "high", "should_escalate": false}
+{"id": "t05", "text": "My CSV export gives me an empty file.", "intent": "technical_issue", "urgency": "normal", "should_escalate": false}
+{"id": "t06", "text": "My parcel was due last week and tracking has not moved for 6 days.", "intent": "shipping", "urgency": "normal", "should_escalate": false}
+{"id": "t07", "text": "You sent me a blue keyboard but I ordered the black one.", "intent": "shipping", "urgency": "low", "should_escalate": false}
+{"id": "t08", "text": "How do I cancel my subscription? I don't want to be charged next month.", "intent": "cancellation", "urgency": "normal", "should_escalate": false}
+{"id": "t09", "text": "Please add a dark mode, my eyes hurt at night.", "intent": "feature_request", "urgency": "low", "should_escalate": false}
+{"id": "t10", "text": "Your API returns 429 errors every few seconds in our integration.", "intent": "technical_issue", "urgency": "high", "should_escalate": false}
+{"id": "t11", "text": "My account got locked after I typed the wrong password a few times.", "intent": "account_access", "urgency": "normal", "should_escalate": false}
+{"id": "t12", "text": "Our production checkout is down since 10 minutes and we are losing orders!", "intent": "technical_issue", "urgency": "critical", "should_escalate": true}
+{"id": "t13", "text": "I think someone hacked my account, there are purchases I did not make.", "intent": "account_access", "urgency": "critical", "should_escalate": true}
+{"id": "t14", "text": "Please delete all my personal data under GDPR article 17.", "intent": "other", "urgency": "high", "should_escalate": true}
+{"id": "t15", "text": "I will sue you if this is not fixed today.", "intent": "other", "urgency": "high", "should_escalate": true}
+{"id": "t16", "text": "It doesn't work.", "intent": "other", "urgency": "normal", "should_escalate": true}
+{"id": "t17", "text": "Where is my refund? I cancelled two weeks ago and was still charged.", "intent": "billing", "urgency": "high", "should_escalate": false}
+{"id": "t18", "text": "Do you ship to Norway and how long does it take?", "intent": "shipping", "urgency": "low", "should_escalate": true}
+{"id": "t19", "text": "The export button is greyed out on my tablet.", "intent": "technical_issue", "urgency": "normal", "should_escalate": false}
+{"id": "t20", "text": "Can I get a discount for a non-profit organisation?", "intent": "other", "urgency": "low", "should_escalate": true}
+{"id": "t21", "text": "I got a charge from you but I never signed up.", "intent": "billing", "urgency": "high", "should_escalate": true}
+{"id": "t22", "text": "The app crashes when I upload a photo larger than 10 MB.", "intent": "technical_issue", "urgency": "normal", "should_escalate": true}
+{"id": "t23", "text": "I can't reset my password because I no longer have access to that email address.", "intent": "account_access", "urgency": "high", "should_escalate": true}
